@@ -1,6 +1,6 @@
 📌 Sistema de Ouvidoria
 
-Este é um sistema de Ouvidoria em Python, que permite registrar, listar, editar e excluir manifestações de usuários. O sistema se conecta a um banco de dados MySQL e pode ser usado para gerenciar sugestões, elogios e reclamações.
+Este é um sistema de Ouvidoria em Python para displina de programar em linguagem estruturada no curso de  Análise e Desenvolvimento de sistemas na unifacisa, que permite registrar, listar, editar e excluir manifestações de usuários. O sistema se conecta a um banco de dados MySQL e pode ser usado para gerenciar sugestões, elogios e reclamações.
 
 🛠 Tecnologias Utilizadas
 
