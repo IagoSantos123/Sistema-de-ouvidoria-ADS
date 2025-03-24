@@ -36,7 +36,7 @@ CREATE TABLE manifestacoes (
 
     Clone o repositório :
 
-        git clone https://github.com/seuusuario/Sistemadeouvidoria.git
+        git clone https://github.com/IagoSantos123/Sistema-de-ouvidoria-ADS.git
     
     Entre na pasta:
 
