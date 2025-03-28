@@ -50,7 +50,9 @@ CREATE TABLE manifestacoes (
 
 
     Instale as dependências:
-        pip install -r requirements.txt
+    
+        pip install mysql-connector-python
+
 
     Configure o banco de dados no config.py
     
