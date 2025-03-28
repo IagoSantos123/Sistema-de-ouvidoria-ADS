@@ -9,7 +9,7 @@ Gustavo Paula Cabral
 
 Daniel Almeida Diniz
 
-Professor :
+Professor Orientador:
 
 Daniel Abella
 
@@ -26,71 +26,63 @@ mysql-connector-python
 bash
 Copy
 Edit
+
 Sistemadeouvidoria/
 │── config.py            # Configurações do banco de dados
 │── database.py          # Conexão com o banco e operações SQL
 │── main.py              # Interface do usuário e lógica principal
 │── requirements.txt     # Dependências do projeto
 │── README.md            # Documentação do projeto
+
 ⚙️ Configuração do Banco de Dados
 Antes de rodar o projeto, crie a tabela no MySQL com o seguinte comando:
 
-sql
-Copy
-Edit
-CREATE TABLE manifestacoes (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    tipo VARCHAR(50),
-    descricao TEXT,
-    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+        CREATE TABLE manifestacoes (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            tipo VARCHAR(50),
+            descricao TEXT,
+            data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        );
+
+
+
 🚀 Como Instalar e Executar
 Siga os passos abaixo para configurar e executar o projeto:
 
 Clone o repositório:
 
-bash
-Copy
-Edit
-git clone https://github.com/IagoSantos123/Sistema-de-ouvidoria-ADS.git
+    git clone https://github.com/IagoSantos123/Sistema-de-ouvidoria-ADS.git
+
+
 Entre na pasta do projeto:
 
-bash
-Copy
-Edit
-cd Sistemadeouvidoria
+    cd Sistemadeouvidoria
+
+
 Crie um ambiente virtual (opcional, mas recomendado):
 
-bash
-Copy
-Edit
-python -m venv venv
+    python -m venv venv
+
+
 Para Linux/Mac:
 
-bash
-Copy
-Edit
-source venv/bin/activate
-Para Windows:
+    source venv/bin/activate
 
-bash
-Copy
-Edit
-venv\Scripts\activate
+Para Windows:
+    venv\Scripts\activate
+
 Instale as dependências:
 
-bash
-Copy
-Edit
-pip install mysql-connector-python
+    pip install mysql-connector-python
+
+
 Configure o banco de dados no arquivo config.py.
 
 Execute o sistema:
 
-bash
-Copy
-Edit
-python main.py
+    python main.py
+
+
 🖥 Como Usar
 Após executar o sistema, você verá o menu principal com as seguintes opções:
 
@@ -102,3 +94,4 @@ Após executar o sistema, você verá o menu principal com as seguintes opções
 6️⃣ Sair
 
 Escolha a opção desejada digitando o número correspondente.
+
