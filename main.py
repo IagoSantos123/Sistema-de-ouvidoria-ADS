@@ -1,4 +1,12 @@
-from database import listar_manifestacoes, inserir_manifestacao, alterar_manifestacao, excluir_manifestacao, contar_reclamacoes
+from database import (
+    listar_manifestacoes,
+    inserir_manifestacao,
+    alterar_manifestacao,
+    excluir_manifestacao,
+    contar_reclamacoes,
+    pesquisar_por_nome,
+    pesquisar_por_indice,
+)
 
 def menu():
     while True:
@@ -8,7 +16,9 @@ def menu():
         print("3. Alterar manifestação")
         print("4. Excluir manifestação")
         print("5. Contar reclamações")
-        print("6. Sair")
+        print("6. Pesquisar por nome")
+        print("7. Pesquisar por índice")
+        print("8. Sair")
 
         opcao = input("Escolha uma opção: ")
 
@@ -41,6 +51,25 @@ def menu():
             print(f"Total de reclamações registradas: {total}")
         
         elif opcao == "6":
+            nome = input("Digite o nome ou descrição para pesquisa: ").strip()
+            resultados = pesquisar_por_nome(nome)
+            if resultados:
+                print("\n=== Resultados da Pesquisa ===")
+                for r in resultados:
+                    print(f"ID: {r['id']} | Tipo: {r['tipo']} | Descrição: {r['descricao']}")
+            else:
+                print("Nenhuma manifestação encontrada com esse nome ou descrição.")
+        
+        elif opcao == "7":
+            indice = input("Digite o índice para pesquisa: ").strip()
+            resultado = pesquisar_por_indice(indice)
+            if resultado:
+                print("\n=== Resultado da Pesquisa ===")
+                print(f"ID: {resultado['id']} | Tipo: {resultado['tipo']} | Descrição: {resultado['descricao']}")
+            else:
+                print("Nenhuma manifestação encontrada com esse índice.")
+        
+        elif opcao == "8":
             print("Saindo...")
             break
         

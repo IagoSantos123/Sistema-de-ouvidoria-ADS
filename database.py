@@ -70,3 +70,39 @@ def contar_reclamacoes():
         cursor.close()
         conexao.close()
         return total
+
+def pesquisar_por_nome(nome):
+    """Pesquisa manifestações pelo nome ou parte da descrição, incluindo o tipo."""
+    conexao = conectar()
+    if conexao:
+        cursor = conexao.cursor()
+        # Ajustando a query para buscar no campo `tipo` e no campo `descricao`
+        sql = """
+        SELECT id, tipo, descricao
+        FROM manifestacoes
+        WHERE descricao LIKE %s OR tipo LIKE %s
+        """
+        cursor.execute(sql, (f"%{nome}%", f"%{nome}%"))
+        resultados = cursor.fetchall()
+        cursor.close()
+        conexao.close()
+
+        # Convertendo para uma lista de dicionários
+        lista_resultados = [{"id": r[0], "tipo": r[1].lower(), "descricao": r[2]} for r in resultados]
+        return lista_resultados
+
+def pesquisar_por_indice(indice):
+    """Pesquisa manifestação pelo índice (ID)."""
+    conexao = conectar()
+    if conexao:
+        cursor = conexao.cursor()
+        sql = "SELECT id, tipo, descricao FROM manifestacoes WHERE id = %s"
+        cursor.execute(sql, (indice,))
+        resultado = cursor.fetchone()
+        cursor.close()
+        conexao.close()
+
+        if resultado:
+            # Convertendo para um dicionário
+            return {"id": resultado[0], "tipo": resultado[1].lower(), "descricao": resultado[2]}
+        return None
