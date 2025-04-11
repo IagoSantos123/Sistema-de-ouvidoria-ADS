@@ -1,4 +1,4 @@
-📌 Sistema de Ouvidoria
+📌 Sistema de Ouvidoria ataulizado parte 02
 Este é um sistema de Ouvidoria desenvolvido em Python para a disciplina de Programação em Linguagem Estruturada, no curso de Análise e Desenvolvimento de Sistemas da UNIFACISA.
 
 Equipe:
